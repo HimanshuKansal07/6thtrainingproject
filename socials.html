@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $(".insta").hover(function(){
+                $(".insta").animate(
+                    { 
+                        deg: 360 
+                    },
+                    {
+                        duration: 1200,
+                        step: function(now) {
+                            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                        }
+                    }
+                );
+            });
+        });
+
+        $(document).ready(function(){
+            $(".twitter").hover(function(){
+                $(".twitter").animate(
+                    { 
+                        deg: 360 
+                    },
+                    {
+                        duration: 1200,
+                        step: function(now) {
+                            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                        }
+                    }
+                );
+            });
+        });
+
+        $(document).ready(function(){
+            $(".linkedin").hover(function(){
+                $(".linkedin").animate(
+                    { 
+                        deg: 360 
+                    },
+                    {
+                        duration: 1200,
+                        step: function(now) {
+                            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                        }
+                    }
+                );
+            });
+        });
+        $(document).ready(function(){
+            $(".fb").hover(function(){
+                $(".fb").animate(
+                    { 
+                        deg: 360 
+                    },
+                    {
+                        duration: 1200,
+                        step: function(now) {
+                            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                        }
+                    }
+                );
+            });
+        });
+    </script>
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+
+        img{
+            width: 200px;
+        }
+
+        .top{
+            width: 70%;
+            margin: auto;
+        }
+        
+        .lower{
+            background-color: lightgrey;
+        }
+        .name{
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+            align-items: center;
+        }
+
+        .uietlogo{
+            width: 150px;
+        }
+
+        .uniname{
+            margin: auto;
+            font-size: xx-large;
+            font-weight:bolder;
+            font-size: 200%;
+        }
+        .nav {
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .nav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .nav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .name{
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+        }
+
+        .contact_items{
+            margin: auto;
+        }
+
+
+        #date{
+            position:fixed;
+            bottom: 0%;
+            right: 0%;
+            font-size: x-large;
+            text-align: right;
+            background-color: orange;
+            color: black;
+        }
+        /* .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          padding: 12px 16px;
+          z-index: 1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        } */
+
+        .links{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="name">
+            <img src="UIET_logo.png" class="uietlogo">
+            <div class="uniname">University Institute of Engineering and Technology</div>
+            <div class="contact">
+                <div class="contact_items">
+                    <b>E-mail</b><br>
+                    directoruiet@pu.ac.in<br>
+                    <b>Call</b><br>
+                    8493056739
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="nav">
+            <a href="institute.html">Home</a>
+            <a href="">About</a>
+            <a href="">Courses</a>
+            <a href="">Staff</a>
+            <a href="">Blog</a>
+            <a href="socials.html">Socials</a>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="lower">
+    <div class="links">
+        <div class="insta"><a href="https://www.instagram.com/"><img src="Instagram_logo_2022.png"></a></div>
+        <div class="twitter"><a href="https://twitter.com/i/flow/login"><img src="Logo_of_Twitter.png"></a></div>
+        <div class="linkedin"><a href="https://www.linkedin.com/"><img src="linkedin.png"></a></div>
+    </div>
+    <div class="links">
+        <div class="fb"><a href="https://www.facebook.com/"><img src="fb.png"></a></div>
+        
+    </div>
+    <div id="date"></div>
+
+    <script>
+        let d = new Date();
+        let m;
+        switch(d.getMonth()) {
+        case 0:
+            m = "January"
+            break;
+        case 1:
+        m = "Feb"
+        break;
+        case 2:
+        m = "Mar"
+        break;
+        case 3:
+        m = "Apr"
+        break;
+        case 4:
+        m = "May"
+        break;
+        case 5:
+        m = "June"
+        break;
+        case 6:
+        m = "July"
+        break;
+        case 7:
+        m = "Agust"
+        break;
+        case 8:
+        m = "Sept"
+        break;
+        case 9:
+        m = "oct"
+        break;
+        case 10:
+        m = "nov"
+        
+        break;
+        case 11:
+        m = "dec"
+        break;
+        
+    }
+        document.getElementById("date").innerHTML = d.getDate()+" "+m+" "+d.getFullYear();
+    </script>
+
+    </div>
+</body>
+</html>
