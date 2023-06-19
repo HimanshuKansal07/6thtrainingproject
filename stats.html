@@ -10,10 +10,37 @@
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script>
         $(document).ready(function(){
-            $(".table").click(function(){
+            $(".table").hover(function(){
                 $(".table").animate({
                     width:"100%",   
                     backgroundColor : "gray",
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $(".pla0").click(function(){
+                $(".placement0").hide(1000);
+                $(".pla0").click(function(){
+                    $(".placement0").show(1000);
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $(".pla1").click(function(){
+                $(".placement1").hide(1000);
+                $(".pla1").click(function(){
+                    $(".placement1").show(1000);
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $(".pla2").click(function(){
+                $(".placement2").hide(1000);
+                $(".pla2").click(function(){
+                    $(".placement2").show(1000);
                 });
             });
         });
@@ -74,7 +101,14 @@
             margin: auto;
         }
 
-        table, td, th, tr{
+
+        /* table, td, th, tr{
+            border: solid;
+            margin: auto;
+            padding: 14px;
+            background-color: whitesmoke;
+        } */
+        .table, .table td, .table th, .table tr{
             border: solid;
             margin: auto;
             padding: 14px;
@@ -95,10 +129,28 @@
             background-color: lightgray;
         }
 
+        .placement0 tr, .placement0 td, .placement1 tr, .placement1 td, .placement2 tr, .placement2 td{
+            font-size: x-large;
+            font-weight: 100;
+        }
+
+        .placement0, .placement1, .placement2{
+            border: solid 1px;
+        }
+
+        img{
+            width: 50%;
+        }
+
+        .pr{
+            display: flex;
+            margin: auto;    
+            justify-content: center;    
+        }
         /* .dropdown {
           position: relative;
           display: inline-block;
-        }
+        }   
         
         .dropdown-content {
           display: none;
@@ -195,9 +247,117 @@
         </tr>
     </table>
     </div>
+<br><br>
+    <h1>Placement Statistics</h1>
+    <br>
+    <h2 class="pla0">2022-23</h2>
+    <br>
+    <table class="placement0">
+        <tr>
+            <th>Company</th>
+            <th>Offers</th>
+        </tr>
+
+        <tr>
+            <td>Amazon</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>American Express</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>Deloitte</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>KPMG</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>ZS Associates</td>
+            <td>17</td>
+        </tr>
+    </table><br>
+    <h2 class="pla1">2021-22</h2>
+    <br>
+    <table class="placement1">
+        <tr>
+            <th>Company</th>
+            <th>Offers</th>
+        </tr>
+
+        <tr>
+            <td>Amazon</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>American Express</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>Deloitte</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>KPMG</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>ZS Associates</td>
+            <td>17</td>
+        </tr>
+    </table><br>
+    <h2 class="pla2">2020-21</h2>
+    <br>
+    <table class="placement2">
+        <tr>
+            <th>Company</th>
+            <th>Offers</th>
+        </tr>
+
+        <tr>
+            <td>Amazon</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>American Express</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>Deloitte</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>KPMG</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>ZS Associates</td>
+            <td>17</td>
+        </tr>
+    </table><br><br>
+    <h1>Past Recruiters</h1>
+    <div class="pr"><div class="pastrec">
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="pastrec/Hospytek-360x102.png"><br><br>
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="pastrec/HP-300x300.png"><br><br>
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="pastrec/Infosys.png"><br><br>
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="pastrec/mu-sigma.jpg"><br><br>
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="pastrec/NetGain_Technologies_Logo-360x116.png"><br><br>
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="pastrec/vedanta.png"><br><br>
+    </div></div>
+
     <div id="date"></div>
 
     <script>
+        function bigImg(x) {
+        x.style.width = "85%";
+        }
+
+        function normalImg(x) {
+        x.style.width = "50%";
+        }
+
         let d = new Date();
         let m;
         switch(d.getMonth()) {

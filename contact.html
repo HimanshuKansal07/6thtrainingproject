@@ -4,7 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".questionform").hide(0),
+            $(".questions").click(function(){
+                $(".questionform").show(1000);
+                $(".questions").click(function(){
+                    $(".questionform").hide(1000);
+                });
+            });
+        });
+    </script>
     <style>
+        .querytext{
+            width: 500px;
+        }
+        .querydate, .queryname{
+            width: 100px;
+            font-style: italic;
+        }
+
         body{
             background-color: whitesmoke;
         }
@@ -31,13 +54,13 @@
             font-weight:bolder;
         }
         
-        .form-container {
+        .form-container{
             max-width: 500px;
             margin: 0 auto;
         }
 
         .form-container input[type=text],
-        .form-container textarea {
+        .form-container textarea{
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -45,7 +68,7 @@
             resize: vertical;
         }
 
-        .form-container input[type=submit] {
+        .form-container input[type=submit]{
             background-color: #333;
             color: #fff;
             padding: 12px 20px;
@@ -86,6 +109,17 @@
             background-color: orange;
             color: black;
         }
+
+        .faq{
+            width: 70%;
+            margin: auto;
+            border: solid 1px;
+        }
+
+        .faq tr{
+            border: solid 1px;
+        }
+
     </style>
 
     <script>
@@ -133,52 +167,78 @@
             <input type="submit" value="Submit" onclick="submitbutton()">
         </form>
     </div>
+
+    <div class="form-container">
+    <h2 class="questions">Do you have any questions about us?</h2>
+    <div class="questionform">
+            <input type="text" placeholder="Your Name"  id="name"> 
+            <input type="text" placeholder="Your Email" id="email"><br>
+            <textarea placeholder="Your Query" id="query"></textarea>
+            <button type="submit" onclick="buttonsubmit()" class="submitBtn">Submit</button>
+    </div>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="taskList">
+        <table class="faq">
+            <tbody id="listing">
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, animi.</td><td>10 Jan 2023</td><td>John Doe</td>
+            </tbody>
+        </table>
+    </div>
+
     <div id="date"></div>
 
     <script>
         let d = new Date();
         let m;
         switch(d.getMonth()) {
-        case 0:
-            m = "January"
+            case 0:
+                m = "January"
+                break;
+            case 1:
+            m = "Feb"
             break;
-        case 1:
-        m = "Feb"
-        break;
-        case 2:
-        m = "Mar"
-        break;
-        case 3:
-        m = "Apr"
-        break;
-        case 4:
-        m = "May"
-        break;
-        case 5:
-        m = "June"
-        break;
-        case 6:
-        m = "July"
-        break;
-        case 7:
-        m = "Agust"
-        break;
-        case 8:
-        m = "Sept"
-        break;
-        case 9:
-        m = "oct"
-        break;
-        case 10:
-        m = "nov"
-        
-        break;
-        case 11:
-        m = "dec"
-        break;
-        
-    }
+            case 2:
+            m = "Mar"
+            break;
+            case 3:
+            m = "Apr"
+            break;
+            case 4:
+            m = "May"
+            break;
+            case 5:
+            m = "June"
+            break;
+            case 6:
+            m = "July"
+            break;
+            case 7:
+            m = "Agust"
+            break;
+            case 8:
+            m = "Sept"
+            break;
+            case 9:
+            m = "oct"
+            break;
+            case 10:
+            m = "nov"
+            
+            break;
+            case 11:
+            m = "dec"
+            break;
+        }
+
         document.getElementById("date").innerHTML = d.getDate()+" "+m+" "+d.getFullYear();
+        
+        function buttonsubmit(){
+            var query=document.getElementById("query").value;
+            var name=document.getElementById("name").value;
+            document.querySelector("#listing").innerHTML+="<tr><td>"+query+"</td><td>"+d.getDate()+" "+m+" "+d.getFullYear()+"</td><td>"+name+"</td></tr>";
+        }
     </script>
 </body>
 </html>
